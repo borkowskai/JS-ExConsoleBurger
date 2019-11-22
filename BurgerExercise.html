@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BurgerParty</title>
+</head>
+<body>
+    <script>
+    /*
+    Workshop
+    écrire une fonction qui améliore ces burgers
+    elle prend en entrée un seul burger
+    elle retourne un burger amélioré ainsi:
+    si il y a  viande​ dedans, l'objet aura la propriété « veg:  false »
+    sinon, l'objet aura la propriété « veg: true »
+    Bonus: différencier aussi les sandwitch "vegans".
+	*/
+    
+    const burgers = [
+        { nom: "cheese", ingr: ["steak", "fromage"] },
+        { nom: "tofu", ingr: ["tomate", "tofu", "fromage"] },
+        { nom: "seitan", ingr: ["seitan", "salade"] }
+        ];
+    // burgers[0].veg = true;
+
+    // // solution a la for
+    // var ameliorerBurger = function (){
+    //     for (var i=0; i<burgers.length; i++){
+    //             burgers[i].veg = true;
+    //         for(var ingridient of burgers[i].ingr){
+    //             if(ingridient === "steak"){
+    //                 burgers[i].veg = false;
+    //             }
+    //         }                
+    //     }
+    // }
+
+    // //a la JS
+    //     let ameliorerBurger = function (){
+    //     for (let burger of burgers){
+    //             burger.veg = true;
+    //         for(var ingridient of burger.ingr){
+    //             if(ingridient === "steak"){
+    //                 burger.veg = false;
+    //             }
+    //         }                
+    //     }
+    // }
+
+    includes
+    let ameliorerBurger = function () {
+        for(let burger of burgers){
+            burger.veg = burger.ingr.includes("steak");
+        }
+    }
+
+    ameliorerBurger();
+    console.log(burgers);
+    </script>
+
+</body>
+</html>
